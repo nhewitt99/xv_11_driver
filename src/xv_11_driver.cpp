@@ -110,12 +110,13 @@ int main(int argc, char * argv[])
         }
         laser.close();
         return 0;
+    } catch (const std::exception &e) {
+        RCLCPP_ERROR(node->get_logger(), e.what());
+        return -1;
     } catch (...) {
-        // TODO: how can we print out this exception instead
         RCLCPP_ERROR(node->get_logger(), "Error instantiating laser object. Check correct port and baud rate!");
         return -1;
     }
-
 
     rclcpp::shutdown();
     return 0;
