@@ -17,9 +17,9 @@ you may run it as follows
 
 The following ROS2 parameters are defaulted as below and can be set using parameters
 
-    port              /dev/tty_xv11_driver
+    port              /dev/ttyUSB0
     baud_rate         115200
-    frame_id          neato_laser
+    frame_id          laser_frame
     firmware_version  2
 
 Run the driver and it should generate scan data on topic /scan
